@@ -77,7 +77,6 @@ app.get("/getBlogs", (req, res) => {
 //get blog by id
 app.get("/getBlog", (req, res) => {
   let { id } = req.body;
-  console.log("===id", id);
   connection.execute(`SELECT * FROM blogs WHERE id=${id}`, (error, result) => {
     res.json({ message: "done ", blog: result });
   });
